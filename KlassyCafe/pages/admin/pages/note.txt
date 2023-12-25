@@ -1,0 +1,6 @@
+SELECT f.img,f.name, f.price,po.num,b.bookid FROM tbl_preorder po JOIN tbl_food f ON po.foodid = f.id JOIN tbl_booking b ON po.tableid = b.tid 
+
+SELECT t.table_num, f.id, f.price,po.num FROM tbl_food f JOIN tbl_preorder po ON po.foodid = f.id JOIN tbl_table t ON po.tableid = t.table_num
+
+SELECT f.img,f.name,t.table_num,f.price,po.num , po.price*po.num AS Total
+FROM tbl_food f JOIN tbl_preorder po ON po.foodid = f.id JOIN tbl_table t ON po.tableid = t.table_num
